@@ -2,8 +2,9 @@
 
 Replicate Instragram-style filters in PHP
 
-# Install
+# Installation
 
+The tmp directory must be writable.
 
 # Usage
 
@@ -24,8 +25,6 @@ require_once('classes/Filter/Earlybird.php');
 require_once('classes/Filter/Inkwell.php');
 ```
 
-
-
 # Todo
 
 - Add more filters
@@ -33,4 +32,10 @@ require_once('classes/Filter/Inkwell.php');
 - Improve interface
 - Implement more photoshop functions in imagemagick
 	- Implement 'curves' properly by using polynomial regression to get the coefficients needed for imagick's FX function
-- Abstract to separate from Image class
+- Abstract and decouple from Image class
+- Make composer/packagist compatible
+
+# Thanks
+
+- FuelPHP for use of (parts of) their image class.
+- Daniel Box for his Photoshop actions for instram filters (http://dbox.tumblr.com/post/5426249009/instagram-filters-as-photoshop-actions)

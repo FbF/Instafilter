@@ -38,4 +38,4 @@ require_once('classes/Filter/Inkwell.php');
 # Thanks
 
 - FuelPHP for use of (parts of) their image class.
-- Daniel Box for his Photoshop actions for instram filters (http://dbox.tumblr.com/post/5426249009/instagram-filters-as-photoshop-actions)
+- Daniel Box for his Photoshop actions for instagram filters (http://dbox.tumblr.com/post/5426249009/instagram-filters-as-photoshop-actions)

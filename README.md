@@ -1,6 +1,6 @@
 # Instafilter
 
-Replicate Instragram-style filters in PHP
+Replicate Instragram-style filters in PHP. Translates photoshop functions to PHP.
 
 # Installation
 

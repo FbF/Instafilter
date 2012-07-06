@@ -142,7 +142,7 @@ abstract class Filter
 	 */
 	public function exec($command, $params)
 	{
-		$input = $this->imagick->getImageFilename();
+		$input = $this->imagick()->getImageFilename();
 		$params = " \"{$input}\" " .$params. " \"{$input}\"";
 		$this->_exec($command, $params);
 

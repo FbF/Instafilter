@@ -254,4 +254,27 @@ abstract class Filter
 
 		return $this;
 	}
+
+	
+	/**
+	 * Adds a vignette to the image
+	 * @param string $color the colour of the vignette
+	 * @param int $composition an imagick constant defining the composition to use
+	 * @param float $crop_factor defines the strenth of the vignette
+	 * @return Filter
+	 */
+	public function vignette($color, $composition = \Imagick::COMPOSITE_DEFAULT, $crop_factor = 1.5)
+	{	
+		$height = $this->imagick()->getImageHeight();
+		$width = $this->imagick()->getImageWidth();
+
+		$crop_x = floor($height * $crop_factor);
+		$crop_y = floor($width * $crop_factor);
+
+		$overlay = new \Imagick();
+		$overlay->newPseudoImage($crop_x, $crop_y,"radial-gradient:rgba(0,0,0,0)-$color");
+		$this->imagick()->compositeImage($overlay, $composition, ($width - $crop_x) / 2, ($height - $crop_y)/2);
+
+		return $this;
+	}
 }

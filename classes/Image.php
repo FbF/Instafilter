@@ -28,7 +28,7 @@ class Image
 				'debug' => false,
 				'imagemagick_dir' => '/usr/bin/',
 				'temp_append' => 'image_',
-				'temp_dir' => '/home/robm/Repository/instafilter/tmp/',
+				'temp_dir' => './tmp/',
 				'clear_queue' => false,
 				'quality' => 100,
 			), $configuration);

@@ -21,7 +21,7 @@ class Earlybird extends Instafilter\Filter
 			->brightness_contrast(15, 36)
 
 			->colorize('rgb(251,243,220)')
-			->colorize('rgb(184,184,184)', \Imagick::COMPOSITE_COLORBURN)
-			->colorize('rgb(200,200,200)');
+			->vignette('rgb(184,184,184)', \Imagick::COMPOSITE_COLORBURN)
+			->vignette('rgb(184,184,184)', \Imagick::COMPOSITE_MULTIPLY);
 	}
 }

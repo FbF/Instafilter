@@ -124,11 +124,30 @@ abstract class Filter
 	 */
 	public function brightness_contrast($brightness, $contrast)
 	{
-		//normalise from photoshop's units to imagicks
-		$brightness = round(($brightness / 3) * 2);
-		$contrast = round(($contrast / 3) * 2);
+		//normalise from photoshop's units to imagicks -- this is a guestimate
+		$brightness_normalised = (abs($brightness)/150)*5;
+		$contrast_normalised = (abs($contrast)/150)*5;
+
+		if ($contrast_normalised == 0 and $brightness_normalised == 0)
+		{
+			return $this;
+		}
 		
-		$this->exec('convert'," -brightness-contrast {$brightness}x{$contrast} ");
+		$overlay = new \Imagick();
+		$overlay->newPseudoImage(1, 1000,"gradient:");
+		$overlay->rotateImage('#fff', 90);
+
+		if ($contrast_normalised != 0)
+		{
+			$overlay->sigmoidalContrastImage ($contrast > 0,  $contrast_normalised,  50 );
+		}
+
+		if ($brightness_normalised != 0)
+		{
+			$overlay->sigmoidalContrastImage ($brightness > 0,  $brightness_normalised,  0 );
+		}
+		
+		$this->imagick()->clutImage($overlay);
 
 		return $this;
 	}

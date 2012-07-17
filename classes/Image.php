@@ -36,13 +36,13 @@ class Image
 		return $this;
 	}
 	
-	public static function load($filename)
+	public static function load($filename, $configuration = array())
 	{
 
 		$filename = realpath($filename);
 		
 		// create new image
-		$instance = new self();
+		$instance = new self($configuration);
 
 		if (file_exists($filename))
 		{

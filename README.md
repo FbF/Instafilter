@@ -17,6 +17,8 @@ Fork and pull request any useful changes you make.
 	->save('new.jpg');
 ```
 
+n.b. applying the filter is quite slow; You'll get a significant performance gain by resizing _before_ applying the filter.
+
 If you don't use an autoloader, you'll need to load in the classes:
 ```php
 require_once('classes/Image.php');

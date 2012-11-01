@@ -37,6 +37,11 @@ require_once('classes/Filter/Inkwell.php');
 - Abstract and decouple from Image class
 - Make composer/packagist compatible
 
+# Author
+
+Rob McCann<br>
+http://robmccann.co.uk
+
 # Thanks
 
 - FuelPHP for use of (parts of) their image class.

@@ -1,0 +1,13 @@
+{
+    "name": "fbf/instafilter",
+    "type": "library",
+    "description": "Replicate Instragram-style filters in PHP. Translates photoshop functions to PHP.",
+    "keywords": ["Instagram", "Images"],
+    "homepage": "https://github.com/fbf/instafilter",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["classes/"]
+    }
+}
